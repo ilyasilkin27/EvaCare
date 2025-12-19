@@ -26,3 +26,21 @@ Usage
 Data
 
 Stored in `data.json` with structure matching the spec.
+
+Docker
+
+Build the image (from repo root):
+
+```bash
+docker build -t evacare-bot:latest .
+```
+
+Run the container (set `BOT_TOKEN` and `USER_ID` via env or `.env`):
+
+```bash
+docker run -d --name evacare \
+	--env-file .env \
+	evacare-bot:latest
+```
+
+To deploy to a Docker-hosting service, push the built image to your registry and configure the service to run the container with the same env vars.
