@@ -3,7 +3,7 @@ FROM oven/bun:latest
 WORKDIR /app
 
 # Copy manifest files first for efficient layer caching
-COPY package.json package-lock.json bun.lockb* ./
+COPY package.json bun.lock ./
 
 # Install production dependencies
 RUN bun install --production
